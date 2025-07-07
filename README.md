@@ -1,16 +1,15 @@
-# _Sample project_
+# GPIO Initialization
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+Acest modul configurează pini GPIO ca ieșire pentru LED-uri sau ca intrare pentru butoane, cu suport pentru pull-up.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+## Fișiere
+- `gpio_config.c` – funcții de inițializare GPIO
+- `gpio_config.h` – declarații publice
 
-
-
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
+## Funcții disponibile
+```c
+void configure_LED_output(int gpio_num);
+void configure_BUTTON_input(int gpio_num);
 ## Example folder contents
 
 The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
@@ -20,6 +19,16 @@ files that provide set of directives and instructions describing the project's s
 (executable, library, or both). 
 
 Below is short explanation of remaining files in the project folder.
+##Exemplu de utilizare
+#include "gpio_config.h"
+
+#define LED_GPIO    2
+#define BUTTON_GPIO 0
+
+void app_main() {
+    configure_LED_output(LED_GPIO);
+    configure_BUTTON_input(BUTTON_GPIO);
+}
 
 ```
 ├── CMakeLists.txt
