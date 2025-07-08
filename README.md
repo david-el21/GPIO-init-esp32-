@@ -1,5 +1,6 @@
 # GPIO Initialization
-
+## ESP-IDF v6.0.0 
+## Builded and flashed on MAC OS
 Acest modul configurează pini GPIO ca ieșire pentru LED-uri sau ca intrare pentru butoane, cu suport pentru pull-up.
 
 ## Fișiere
